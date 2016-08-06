@@ -46,6 +46,11 @@
                 <a class="visible-xs visible-sm" data-toggle="collapse" data-target=".navbar-collapse" ng-href="#/resources">About</a>
                 <a class="hidden-xs hidden-sm" href="#/resources">About</a>
               </li>
+              <li ng-class="activeTab('recipients')" ng-click="tab='recipients'">
+                <a class="visible-xs visible-sm" data-toggle="collapse" data-target=".navbar-collapse" ng-href="#/recipients">Recipients</a>
+                <a class="hidden-xs hidden-sm" href="#/recipients">Recipients</a>
+              </li>
+
             </ul>
           </div>
         </div>
@@ -92,6 +97,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/resources.js"></script>
+        <script src="scripts/controllers/recipients.js"></script>
         <!-- endbuild -->
 </body>
 </html>

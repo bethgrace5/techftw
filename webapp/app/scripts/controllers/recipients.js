@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name techftw.controller:ResourcesCtrl
+ * @name techftw.controller:MainCtrl
  * @description
- * # ResourcesCtrl
+ * # RecipientsCtrl
  * Controller of the techftw
  */
 angular.module('techftw')
-  .controller('ResourcesCtrl', function ($scope, $rootScope) {
+  .controller('RecipientsCtrl', function ($scope, $rootScope) {
     $scope.tab = 'resources';
 
     $scope.activeTab = function(tabName) {
@@ -17,4 +17,5 @@ angular.module('techftw')
       }
       return '';
     };
+
   });
