@@ -37,7 +37,7 @@ angular.module('techftw')
         console.log(failure);
       });
     }
-
+    //Build disaster details map with real data
     $scope. disasters = [
       {'id':1,
        'name': 'Erskine',

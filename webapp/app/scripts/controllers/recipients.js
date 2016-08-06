@@ -18,4 +18,14 @@ angular.module('techftw')
       return '';
     };
 
+    //$scope.submittedRecipient = [];
+    $scope.update = function(user) {
+      $rootScope.submittedRecipient.push(angular.copy(user));
+    };
+
+    $scope.reset = function() {
+      $rootScope.submittedRecipient = [];
+    };
+
+    $scope.reset();
   });
