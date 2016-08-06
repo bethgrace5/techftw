@@ -38,6 +38,33 @@ angular.module('techftw')
       });
     }
 
+    $scope. disasters = [
+      {'id':1,
+       'name': 'Erskine',
+       'recieved':{
+          'water':{ 'qty':10, 'unit':'gallons'},
+          'food':{ 'qty':10, 'unit':'gallons'},
+          'towels':{ 'qty':10, 'unit':'gallons'},
+          'medicine':{'qty':10, 'unit':'gallons'}
+       },
+       'needs':{
+          'water': { 'qty':10, 'unit':'gallons'},
+          'food': { 'qty':70, 'unit':'gallons'},
+          'towels': { 'qty':30, 'unit':'gallons'},
+          'medicine':{ 'qty':20, 'unit':'gallons'}
+       }
+      },
+      {'id':2, 'name': 'Disaster 2'},
+      {'id':3, 'name': 'Disaster 3'},
+      {'id':4, 'name': 'Disaster 3'},
+      {'id':5, 'name': 'Disaster 3'},
+      {'id':6, 'name': 'Disaster 3'},
+      {'id':7, 'name': 'Disaster 3'},
+      {'id':8, 'name': 'Disaster 3'},
+      {'id':9, 'name': 'Disaster 3'},
+      {'id':10, 'name': 'Disaster 3'}
+    ];
+
 
 
   });
