@@ -8,13 +8,8 @@
  * Controller of the techftw
  */
 angular.module('techftw')
-  .controller('ResourcesCtrl', function ($scope, $rootScope) {
-    $scope.tab = 'resources';
+  .controller('ResourcesCtrl', function ($scope, $rootScope, $routeParams) {
 
-    $scope.activeTab = function(tabName) {
-      if (tabName === $scope.tab) {
-        return 'active';
-      }
-      return '';
-    };
+    $scope.selectedDisaster = $routeParams.id;
+
   });

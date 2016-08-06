@@ -1,18 +1,27 @@
+
 <div class="panel panel-default">
   <div class="panel-body">
     Home
-    {{animal}}
+    
   </div>
-  <input class="form-control" type="text" ng-model="animal"></input>
 
-  <button ng-click="request()" class="btn btn-success">
-    change
-    <span class="glyphicon glyphicon-heart"></span>
-  </button>
+  
 
   <div ng-repeat = "f in data.features">
     {{f.attributes}}
   </div>
-
+ <form name="Login" novalidate class="form-inline" role="form">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input required type="email" ng-model="user" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input required  type="password" ng-model="pass" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
 </div>
-

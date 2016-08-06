@@ -19,13 +19,13 @@ angular.module('techftw')
       }
       return '';
     }
-
+    $scope.user = '';
+    $scope.pass = '';
     $scope.animal = 'cat';
 
     $scope.changeAnimal = function() {
       $scope.animal = 'dog';
     }
-
 
     $scope.request = function() {
       $http({
@@ -39,33 +39,91 @@ angular.module('techftw')
       });
     }
     //Build disaster details map with real data
-    $scope. disasters = [
+    $scope.disasters = [
       {'id':1,
        'name': 'Erskine',
        'recieved':{
-          'water':{ 'qty':10, 'unit':'gallons'},
-          'food':{ 'qty':10, 'unit':'gallons'},
-          'towels':{ 'qty':10, 'unit':'gallons'},
-          'medicine':{'qty':10, 'unit':'gallons'}
+          'water':{ 'qty':10},
+          'food':{ 'qty':10},
+          'towels':{ 'qty':10},
+          'medicine':{'qty':10}
        },
        'needs':{
-          'water': { 'qty':10, 'unit':'gallons'},
-          'food': { 'qty':70, 'unit':'gallons'},
-          'towels': { 'qty':30, 'unit':'gallons'},
-          'medicine':{ 'qty':20, 'unit':'gallons'}
+          'water': { 'qty':10},
+          'food': { 'qty':70},
+          'towels': { 'qty':30},
+          'medicine':{ 'qty':20}
        }
       },
-      {'id':2, 'name': 'Disaster 2'},
-      {'id':3, 'name': 'Disaster 3'},
-      {'id':4, 'name': 'Disaster 3'},
-      {'id':5, 'name': 'Disaster 3'},
-      {'id':6, 'name': 'Disaster 3'},
-      {'id':7, 'name': 'Disaster 3'},
-      {'id':8, 'name': 'Disaster 3'},
-      {'id':9, 'name': 'Disaster 3'},
-      {'id':10, 'name': 'Disaster 3'}
+      {'id':2, 'name': 'Disaster 2',
+       'recieved':{
+          'water':{ 'qty':10},
+          'food':{ 'qty':10},
+          'towels':{ 'qty':10},
+          'medicine':{'qty':10}
+       },
+       'needs':{
+          'water': { 'qty':10},
+          'food': { 'qty':70},
+          'towels': { 'qty':30},
+          'medicine':{ 'qty':20}
+       }
+      },
+      {'id':3, 'name': 'Disaster 3',
+       'recieved':{
+          'water':{ 'qty':10},
+          'food':{ 'qty':10},
+          'towels':{ 'qty':10},
+          'medicine':{'qty':10}
+       },
+       'needs':{
+          'water': { 'qty':10},
+          'food': { 'qty':70},
+          'towels': { 'qty':30},
+          'medicine':{ 'qty':20}
+       }
+      },
+      {'id':4, 'name': 'Disaster 4',
+       'recieved':{
+          'water':{ 'qty':10},
+          'food':{ 'qty':10},
+          'towels':{ 'qty':10},
+          'medicine':{'qty':10}
+       },
+       'needs':{
+          'water': { 'qty':10},
+          'food': { 'qty':70},
+          'towels': { 'qty':30},
+          'medicine':{ 'qty':20}
+       }
+      },
+      {'id':5, 'name': 'Disaster 5',
+       'recieved':{
+          'water':{ 'qty':10},
+          'food':{ 'qty':10},
+          'towels':{ 'qty':10},
+          'medicine':{'qty':10}
+       },
+       'needs':{
+          'water': { 'qty':10},
+          'food': { 'qty':70},
+          'towels': { 'qty':30},
+          'medicine':{ 'qty':20}
+       }
+      },
+      {'id':6, 'name': 'Disaster 6',
+       'recieved':{
+          'water':{ 'qty':10},
+          'food':{ 'qty':10},
+          'towels':{ 'qty':10},
+          'medicine':{'qty':10}
+       },
+       'needs':{
+          'water': { 'qty':10},
+          'food': { 'qty':70},
+          'towels': { 'qty':30},
+          'medicine':{ 'qty':20}
+       }
+      },
     ];
-
-
-
   });

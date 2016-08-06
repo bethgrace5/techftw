@@ -1,0 +1,30 @@
+
+
+<div class="row">
+  <div class="col col-xs-12">
+    <h3 class="text-center"> {{disasters[selectedDisaster].name}} </h3>
+    <div class="row">
+      <div class="col-xs-4">
+        Resource
+      </div>
+      <div class="col-xs-4">
+        Received
+      </div>
+      <div class="col-xs-4">
+        Needs
+      </div>
+    </div>
+    <div class="row" ng-repeat = "(k,r) in disasters[0].recieved">
+      <div class="col-xs-4">
+        <small><span class="glyphicon glyphicon-menu-right"></span></small>
+        {{k}}
+      </div>
+      <div class="col-xs-4">
+        {{r.qty}}
+      </div>
+      <div class="col-xs-4">
+        {{disasters[selectedDisaster].needs[k].qty}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,14 +9,6 @@
  */
 angular.module('techftw')
   .controller('RecipientsCtrl', function ($scope, $rootScope) {
-    $scope.tab = 'resources';
-
-    $scope.activeTab = function(tabName) {
-      if (tabName === $scope.tab) {
-        return 'active';
-      }
-      return '';
-    };
 
     $scope.submit= function(user) {
       var submit = new Promise(function(resolve, reject) {
