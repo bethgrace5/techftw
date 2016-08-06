@@ -9,6 +9,7 @@
  */
 angular.module('techftw')
   .controller('MainCtrl', function ($scope, $rootScope, $http) {
+    $rootScope.submittedRecipients = [];
     $scope.tab = 'home';
     $scope.data = {};
 

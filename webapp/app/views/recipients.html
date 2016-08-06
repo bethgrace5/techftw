@@ -1,17 +1,30 @@
 <div class="panel panel-default">
+  Input Recipient Info
   <div class="panel-body">
-    <form novalidate class="simple-form">
-      Name: <input type="text" ng-model="user.name" /><br />
-      Address: <input type="text" ng-model="user.address" /><br />
-      City: <input type="text" ng-model="user.city" /><br />
-      Zip Code: <input type="text" ng-model="user.zipcode" /><br />
-      County: <input type="text" ng-model="user.county" /><br />
+    <form name="submitForm" novalidate class="recipient-form" >
+      Name: <input type="text" ng-model="user.name" required /><br />
+      Address: <input type="text" ng-model="user.address" required /><br />
+      City: <input type="text" ng-model="user.city" required /><br />
+      Zip Code: <input type="text" ng-model="user.zipcode" required /><br />
+      County: <input type="text" ng-model="user.county" required /><br />
       E-mail: <input type="email" ng-model="user.email" /><br />
       <br />
       <!-- <input type="button" ng-click="reset()" value="Reset" /> --!>
-      <input type="submit" ng-click="update(user)" value="Submit" />
+      <input type="submit"
+        ng-click="submit(user)" value="Submit"
+        ng-disabled="submitForm.$invalid" />
   </form>
   <br />
-  <pre>submittedRecipient = {{submittedRecipient | json}}</pre>
+  <pre>submittedRecipients = {{submittedRecipients | json}}</pre>
   </div>
 </div>
+
+<style type="text/css">
+  .recipient-form input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+  }
+
+  .recipient-form input.ng-valid.ng-touched {
+    background-color: #78FA89;
+  }
+</style>
