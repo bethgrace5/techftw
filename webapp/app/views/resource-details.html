@@ -2,28 +2,17 @@
 
 <div class="row">
   <div class="col col-xs-12">
-    <h3 class="text-center"> {{disasters[selectedDisaster].name}} </h3>
+    <h3 class="text-center"> {{selectedDisaster.name}} </h3>
     <div class="row">
-      <div class="col-xs-4">
-        Resource
-      </div>
-      <div class="col-xs-4">
-        Received
-      </div>
-      <div class="col-xs-4">
-        Needs
+      <div class="col-xs-12">
+        Resources needed at this location...
       </div>
     </div>
-    <div class="row" ng-repeat = "(k,r) in disasters[0].recieved">
+    <div class="row" ng-repeat = "(k,v) in disasters[0].needs" 
+      ng-hide="v.qty <= selectedDisaster.recieved[k].qty">
       <div class="col-xs-4">
         <small><span class="glyphicon glyphicon-menu-right"></span></small>
         {{k}}
-      </div>
-      <div class="col-xs-4">
-        {{r.qty}}
-      </div>
-      <div class="col-xs-4">
-        {{disasters[selectedDisaster].needs[k].qty}}
       </div>
     </div>
   </div>

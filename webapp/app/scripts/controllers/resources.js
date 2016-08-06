@@ -9,7 +9,11 @@
  */
 angular.module('techftw')
   .controller('ResourcesCtrl', function ($scope, $rootScope, $routeParams) {
-
-    $scope.selectedDisaster = $routeParams.id;
-
+    $scope.selectedDisaster = {};
+    
+    _.map($scope.disasters, function(value, key){
+      if (value.id == $routeParams.id) {
+        $scope.selectedDisaster = value;
+      }
+    });
   });
