@@ -2,16 +2,20 @@
 
 /**
  * @ngdoc function
- * @name appApp.controller:MainCtrl
+ * @name techftw.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the appApp
+ * Controller of the techftw
  */
-angular.module('appApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+angular.module('techftw')
+  .controller('MainCtrl', function ($scope, $rootScope) {
+    $scope.tab = 'home';
+
+    $scope.activeTab = function(tabName) {
+      if (tabName === $scope.tab) {
+        return 'active';
+      }
+      return '';
+    }
+
   });

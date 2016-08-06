@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name appApp
+ * @name techftw
  * @description
- * # appApp
+ * # techftw
  *
  * Main module of the application.
  */
 angular
-  .module('appApp', [
+  .module('techftw', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
