@@ -1,0 +1,11 @@
+# OS Garbage
+.DS_Store
+Thumbs.db
+
+# Vim swapfiles
+*.swp
+*.swo
+
+*.log
+node_modules
+bower_components
