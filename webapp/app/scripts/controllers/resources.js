@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name techftw.controller:AboutCtrl
+ * @name techftw.controller:ResourcesCtrl
  * @description
- * # AboutCtrl
+ * # ResourcesCtrl
  * Controller of the techftw
  */
 angular.module('techftw')
-  .controller('AboutCtrl', function () {
+  .controller('ResourcesCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

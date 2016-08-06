@@ -1,6 +1,19 @@
 <div class="panel panel-default">
   <div class="panel-body">
     Home
+    {{animal}}
   </div>
+  <input class="form-control" type="text" ng-model="animal"></input>
+
+  <button ng-click="request()" class="btn btn-success">
+    change
+    <span class="glyphicon glyphicon-heart"></span>
+  </button>
+
+  <div ng-repeat = "f in data.features">
+    <hr/>
+    {{f.attributes.incidentname}}
+  </div>
+
 </div>
 
