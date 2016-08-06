@@ -18,7 +18,8 @@ angular.module('techftw')
       }
       return '';
     }
-
+    $scope.user = '';
+    $scope.pass = '';
     $scope.animal = 'cat';
 
     $scope.changeAnimal = function() {
