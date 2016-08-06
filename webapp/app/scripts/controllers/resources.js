@@ -8,5 +8,8 @@
  * Controller of the techftw
  */
 angular.module('techftw')
-  .controller('ResourcesCtrl', function ($scope, $rootScope) {
+  .controller('ResourcesCtrl', function ($scope, $rootScope, $routeParams) {
+
+    $scope.selectedDisaster = $routeParams.id;
+
   });

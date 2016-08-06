@@ -29,7 +29,7 @@ angular
         controller: 'ResourcesCtrl',
         controllerAs: 'resourceDetails'
       })
-      .when('/resource-details', {
+      .when('/resources/:id', {
         templateUrl: 'views/resource-details.html',
         controller: 'ResourcesCtrl',
         controllerAs: 'resources'
