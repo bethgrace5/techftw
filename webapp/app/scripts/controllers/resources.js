@@ -9,12 +9,4 @@
  */
 angular.module('techftw')
   .controller('ResourcesCtrl', function ($scope, $rootScope) {
-    $scope.tab = 'resources';
-
-    $scope.activeTab = function(tabName) {
-      if (tabName === $scope.tab) {
-        return 'active';
-      }
-      return '';
-    };
   });

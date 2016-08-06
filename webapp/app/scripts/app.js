@@ -27,6 +27,11 @@ angular
       .when('/resources', {
         templateUrl: 'views/resources.html',
         controller: 'ResourcesCtrl',
+        controllerAs: 'resourceDetails'
+      })
+      .when('/resource-details', {
+        templateUrl: 'views/resource-details.html',
+        controller: 'ResourcesCtrl',
         controllerAs: 'resources'
       })
       .when('/recipients', {
