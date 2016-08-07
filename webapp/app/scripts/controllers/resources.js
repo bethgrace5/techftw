@@ -46,10 +46,10 @@ angular.module('techftw')
     };
 
     $scope.selectedDisaster = {};
-    $scope.openIndex = -1;
+    $scope.openIndex = [];
     $scope.isOpen = function(indice)
     {
-      if(indice == $scope.openIndex)
+      if($scope.openIndex[indice])
         return 'text-showing';
       else
         return 'text-hidden';
@@ -58,10 +58,10 @@ angular.module('techftw')
     $scope.changeIndex = function(indice)
     {
       $scope.selectedDisaster = $scope.disasters[indice];
-    	if(indice == $scope.openIndex)
-    		$scope.openIndex = -1;
+    	if($scope.openIndex[indice])
+    		$scope.openIndex[indice] = false;
     	else
-    		$scope.openIndex = indice;
+    		$scope.openIndex[indice] = true;
     }
 
     $scope.getClass = function(type) {

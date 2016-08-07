@@ -15,7 +15,7 @@
       </div>
       <div class="panel-body">
         {{d.description}}
-        <div class="repeated-item" ng-class="isOpen($index)" ng-show="openIndex == $index">
+        <div class="repeated-item" ng-class="isOpen($index)" ng-show="openIndex[$index]">
           <ng-include src="'./views/resource-details.html'"></ng-include>
         </div>
       </div>
