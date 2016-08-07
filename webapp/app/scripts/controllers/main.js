@@ -19,6 +19,20 @@ angular.module('techftw')
 
     //globalFactory.generateRecipientMockData();
     //globalFactory.generateDisasterMockData();
+    
+        
+    function pullFromFire() {
+      $http({
+        'url': 'https://techftw-237d9.firebaseio.com/recipients.json',
+        'method': "GET"
+      }).then(function(success) {
+        if (success.data !== null) {
+          $rootScope.submittedRecipients = success.data;
+        }
+      });
+    };
+
+    pullFromFire();  
 
     $scope.activeTab = function(tabName) {
       if (tabName === $scope.tab) {
