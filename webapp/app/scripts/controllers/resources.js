@@ -9,6 +9,7 @@
  */
 angular.module('techftw')
   .controller('ResourcesCtrl', function ($scope, $rootScope, globalFactory) {
+    globalFactory.pullDisasters();
     $scope.selectedType = 'water';
 
     $scope.getBaseNeed = function() {
@@ -26,6 +27,7 @@ angular.module('techftw')
       var type = $scope.selectedType;
       var selectAdjustedType = type + 'Adjusted';
       $scope.selectedDisaster[selectAdjustedType] = 12345
+      globalFactory.pushDisasters();
     };
 
     $scope.getResourceRecipientTotal = function(zip) {
