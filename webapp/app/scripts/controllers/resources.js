@@ -11,6 +11,13 @@ angular.module('techftw')
   .controller('ResourcesCtrl', function ($scope, $rootScope, $routeParams) {
     $scope.selectedDisaster = {};
     $scope.openIndex = -1;
+    $scope.isOpen = function(indice)
+    {
+      if(indice == $scope.openIndex)
+        return 'text-showing';
+      else
+        return 'text-hidden';
+    }
     $scope.changeIndex = function(indice)
     {
       $scope.selectedDisaster = $scope.disasters[indice];

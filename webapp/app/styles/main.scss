@@ -114,7 +114,29 @@ input.ng-valid.ng-touched {
 
    }
 
+.text-showing {
+  font-weight: 300;
   
+  max-height: 200px;
+  
+  
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  transition-property: all;
+}
+.text-hidden {
+  font-weight: 300;
+  
+  color: #8c8c8c;
+  max-height: 0;
+  
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
 
 /* Address box */
 .addressbox {
