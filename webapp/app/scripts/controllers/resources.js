@@ -13,14 +13,10 @@ angular.module('techftw')
     $scope.openIndex = -1;
     $scope.changeIndex = function(indice)
     {
+      $scope.selectedDisaster = $scope.disasters[indice];
     	if(indice == $scope.openIndex)
     		$scope.openIndex = -1;
     	else
     		$scope.openIndex = indice;
     }
-    _.map($scope.disasters, function(value, key){
-      if (value.id == $routeParams.id) {
-        $scope.selectedDisaster = value;
-      }
-    });
   });
