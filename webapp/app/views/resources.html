@@ -2,7 +2,15 @@
 <div class="row" ng-repeat = "d in disasters">
   <div class="col col-xs-12">
     <div class="panel panel-default">
-      <div ng-click="changeIndex($index)" class="panel-body clickable">
+      <div class="panel-heading">
+        <button ng-click="changeIndex($index)" class="btn btn-default">
+          <span class="glyphicon glyphicon-triangle-bottom"></span>
+        </button>
+        <span>
+          {{d.name}}
+        </span>
+      </div>
+      <div class="panel-body clickable">
         <p class="lead text-center ">{{d.name}}</p>
         <div class="repeated-item" ng-class="isOpen($index)" ng-show="openIndex == $index">
           <ng-include src="'./views/resource-details.html'"></ng-include>

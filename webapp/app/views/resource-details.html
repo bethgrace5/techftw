@@ -2,25 +2,29 @@
 
 <div class="row">
   <div class="col-xs-12">
-
-    <div class="addressbox">
-      <div class="row" ng-repeat="line in selectedDisaster.address">
-        <div class="col-xs-8">
-          {{line}}
-        </div>
-      </div>
-    </div>
-    {{selectedDisaster.phone}}
-
+    <p>
+      {{selectedDisaster.description}}
+    </p>
   </div>
 </div>
 
 
-<div class="row" ng-repeat="(k,v) in selectedDisaster.needs"
-  ng-hide="v.qty <= selectedDisaster.recieved[k].qty">
-  <div class="col-xs-12">
-    <small><span class="glyphicon glyphicon-menu-right"></span></small>
-    {{k}}
+<div class="row">
+  <div class="col-xs-4">
+    <button class="btn btn-default form-control"> Water </button>
+    <button class="btn btn-default form-control"> Food </button>
+    <button class="btn btn-default form-control"> Gas </button>
+    <button class="btn btn-default form-control"> Medicine </button>
+    <button class="btn btn-default form-control"> Money </button>
+  </div>
+  <div class="col-xs-4">
+    <p> {{selectedDisaster.water}} </p>
+    <p> {{selectedDisaster.food}} </p>
+    <p> {{selectedDisaster.gas}} </p>
+    <p> {{selectedDisaster.medicine}} </p>
+    <p> {{selectedDisaster.money}} </p>
+  </div>
+  <div class="col-xs-4">
   </div>
 </div>
 

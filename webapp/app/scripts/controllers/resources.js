@@ -11,7 +11,7 @@ angular.module('techftw')
   .controller('ResourcesCtrl', function ($scope, $rootScope, $routeParams) {
     $scope.disasters = [
       { 'name': 'Wild Fire 1',
-        'discription': 'Trees and stuff burning.',
+        'description': 'Trees and stuff burning.',
         'zip': 93280,
         'water': 5000,
         'waterAdjusted': 500,
@@ -25,7 +25,7 @@ angular.module('techftw')
         'moneyAdjusted': 1000,
       },
       { 'name': 'Wild Fire 1',
-        'discription': 'Look at me, I\'m burning.',
+        'description': 'Look at me, I\'m burning.',
         'zip': 93268,
         'water': 2000,
         'waterAdjusted': 0,
@@ -39,7 +39,7 @@ angular.module('techftw')
         'moneyAdjusted': 2000
       },
       { 'name': 'Wild Fire 3',
-        'discription': 'Stop, Drop and Roll.',
+        'description': 'Stop, Drop and Roll.',
         'zip': 93280,
         'water': 5000,
         'waterAdjusted': 500,
