@@ -91,8 +91,6 @@ angular.module('techftw')
     $scope.user.medicine = false;
     $scope.user.money = false;
 
-
-
     $scope.submit= function(user) {
       if (!(user.food ||
           user.water ||
