@@ -56,4 +56,25 @@ angular.module('techftw')
     $scope.reset = function() {
       $rootScope.submittedRecipients = [];
     };
+    
+    $scope.queryzip = function(recipients,supplyType) {
+      var res = {};
+      for(var i in recipients) {
+        let recip = recipients[i];
+        let zip = recip.zip;
+        if (!res.hasOwnProperty(zip)) {
+          res[zip] = 0;
+        }  
+        if (recip[supplyType] == true) {
+          res[zip] += 1;
+        }
+      }
+      
+      res.sort(function(a,b) {
+        return a - b;
+      });
+    
+      $scope.toprecipients = res;
+    }
+    
   });
