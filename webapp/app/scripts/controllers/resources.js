@@ -18,6 +18,7 @@ angular.module('techftw')
       else
         return 'text-hidden';
     }
+
     $scope.changeIndex = function(indice)
     {
       $scope.selectedDisaster = $scope.disasters[indice];
@@ -26,4 +27,5 @@ angular.module('techftw')
     	else
     		$scope.openIndex = indice;
     }
+
   });

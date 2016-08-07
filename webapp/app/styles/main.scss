@@ -104,22 +104,18 @@ input.ng-valid.ng-touched {
 /* Resource click highlight */
 .clickable:hover {
   cursor:pointer;
-  background-color:#00ace6;
+  background-color: #adebeb;
 }
-  .clickable {
-   opacity: 1;
-   transition: all .45s linear;
-   -moz-transition: all .45s linear;
-   -webkit-transition: all .45s linear;
-
-   }
+.clickable {
+  transition: all .45s linear;
+  -moz-transition: all .45s linear;
+  -webkit-transition: all .45s linear;
+ }
 
 .text-showing {
   font-weight: 300;
-  
   max-height: 200px;
-  
-  
+  overflow: hidden;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
@@ -128,17 +124,16 @@ input.ng-valid.ng-touched {
 }
 .text-hidden {
   font-weight: 300;
-  
   color: #8c8c8c;
   max-height: 0;
-  
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
+  overflow: hidden;
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  transition: all 0.4s linear;
 }
 
 /* Address box */
 .addressbox {
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
