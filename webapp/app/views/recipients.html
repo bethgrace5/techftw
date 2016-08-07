@@ -2,31 +2,23 @@
   <div class="panel-body">
     <form name="submitForm" novalidate class="row recipient-form">
 
-      <div class="form-group col-sm-6">
-        <label for="name">Name</label>
-        <input type="text" ng-model="user.name" class="form-control" id="name" placeholder="Name" required>
-      </div>
-      <div class="form-group col-sm-6">
+      <div class="form-group col-sm-12">
         <label for="address">Address</label>
         <input type="text" ng-model="user.address" class="form-control" id="address" placeholder="Address" required>
       </div>
-      <div class="form-group col-sm-6">
+      <div class="form-group col-sm-12">
         <label for="address">City</label>
         <input type="text" ng-model="user.city" class="form-control" id="city" placeholder="City" required>
       </div>
-      <div class="form-group col-sm-6">
+      <div class="form-group col-sm-12">
         <label for="address">Zip Code</label>
         <input type="text" ng-model="user.zip" class="form-control" id="zip" placeholder="Zip" required>
       </div>
-      <div class="form-group col-sm-6">
+      <div class="form-group col-sm-12">
         <label for="address">County Code</label>
         <input type="text" ng-model="user.county" class="form-control" id="county" placeholder="County" required>
       </div>
-      <div class="form-group col-sm-6">
-        <label for="address">Email</label>
-        <input type="text" ng-model="user.email" class="form-control" id="email" placeholder="Email" required>
-      </div>
-      <div class="form-group col-sm-6">
+      <div class="form-group col-sm-12">
         <!-- <input type="button" ng-click="reset()" value="Reset" /> --!>
         <button class="btn btn-success" type="submit"
           ng-click="submit(user)" value="Submit"
@@ -34,18 +26,19 @@
           Submit
         </button>
       </div>
+      Check Select Household Resource Received <br />
+      Food <input type="checkbox" ng-model="user.food" ><br />
+      Water <input type="checkbox" ng-model="user.water"><br />
+      Gas <input type="checkbox" ng-model="user.gas"><br />
+      Medicine <input type="checkbox" ng-model="user.medicine"><br />
+      Money <input type="checkbox" ng-model="user.money"><br />
+      <br />
+      <!-- <input type="button" ng-click="reset()" value="Reset" /> --!>
+      <input type="submit"
+        ng-click="submit(user)" value="Submit"
+        ng-disabled="submitForm.$invalid" />
   </form>
   <br />
   <pre>submittedRecipients = {{submittedRecipients | json}}</pre>
   </div>
 </div>
-
-<style type="text/css">
-  .recipient-form input.ng-invalid.ng-touched {
-    background-color: #FA787E;
-  }
-
-  .recipient-form input.ng-valid.ng-touched {
-    background-color: #78FA89;
-  }
-</style>

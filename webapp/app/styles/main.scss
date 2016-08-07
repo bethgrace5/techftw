@@ -87,23 +87,27 @@ body {
     border-bottom: 0;
   }
 }
-  
-/*Form validation */
-  input.ng-invalid.ng-touched {
-    background-color: #FA787E;
-  }
 
-  input.ng-valid.ng-touched {
-    background-color: #78FA89;
-  }
-/*Resource click highlight */
-  .clickable:hover{
+/* Form validation */
+input.ng-invalid.ng-touched {
+  -webkit-box-shadow: inset 3px 3px 13px -2px rgba(179,0,89,0.75);
+  -moz-box-shadow:    inset 3px 3px 13px -2px rgba(179,0,89,0.75);
+  box-shadow:         inset 3px 3px 13px -2px rgba(179,0,89,0.75);
+}
+
+input.ng-valid.ng-touched {
+  -webkit-box-shadow: inset 3px 3px 13px -2px rgba(153, 230, 153, 0.75);
+  -moz-box-shadow:    inset 3px 3px 13px -2px rgba(153, 230, 153, 0.75);
+  box-shadow:         inset 3px 3px 13px -2px rgba(153, 230, 153, 0.75);
+}
+
+/* Resource click highlight */
+.clickable:hover {
   cursor:pointer;
   background-color:#00ace6;
 }
-  
-  /*Address box*/
-  .addressbox {
-    margin-top: 10px;
 
-  }
+/* Address box */
+.addressbox {
+  margin-top: 10px;
+}
