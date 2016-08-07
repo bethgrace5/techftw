@@ -1,1 +1,51 @@
-<p> Data </p>
+
+<ul class="nav nav-pills">
+  <li role="presentation" ng-class="getClass('water')"><a ng-click="supply = 'water'">Water</a></li>
+  <li role="presentation" ng-class="getClass('gas')"><a ng-click="supply = 'gas'">Gas</a></li>
+  <li role="presentation" ng-class="getClass('food')"><a ng-click="supply = 'food'">Food</a></li>
+  <li role="presentation" ng-class="getClass('money')"><a ng-click="supply = 'money'">Money</a></li>
+  <li role="presentation" ng-class="getClass('medicine')"><a ng-click="supply = 'medicine'">Medicine</a></li>
+</ul>
+
+<br/>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-sm-2 col-sm-offset-1">
+        <p class="lead">
+        Zipcode
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <p class="lead">
+        Households
+        </p>
+      </div>
+      <div class="col-sm-3">
+        <p class="lead">
+        Amount
+        </p>
+      </div>
+    </div>
+
+    <div class="row text-center" ng-repeat="d in obj">
+      <div class="col-sm-2 col-sm-offset-1">
+        <p>{{d.zip}}</p>
+      </div>
+      <div class="col-sm-2">
+        <p>
+        {{d[supply].households}} received
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <p>
+        {{d[supply].qty}} given per community
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
