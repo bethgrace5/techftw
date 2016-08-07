@@ -37,10 +37,12 @@
       </div>
       <div class="col-xs-6">
         <div>
-          <p> 1 </p>
-          <p><input class="form-control" value="1" type="number" ng-model="selectedDisaster[selectedType+'Adjusted']" ng-change="'*fill me in*'"></input></p>
+          <p> {{getBaseNeed()}} </p>
+          <p> {{getAdjustedNeed()}} </p>
+          <!--<p><input class="form-control" value="1" type="number" ng-model="selectedDisaster[selectedType+'Adjusted']" ng-change="'*fill me in*'"></input></p>
+-->
           <p> {{getResourceRecipientTotal(d.zip)}} </p>
-          <p> 1 </p>
+          <p> {{getReadjustedResourceNeed(d.zip)}} </p>
         </div>
       </div>
     </div>

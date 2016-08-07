@@ -10,84 +10,30 @@
 angular.module('techftw')
   .controller('ResourcesCtrl', function ($scope, $rootScope, globalFactory) {
     $scope.selectedType = 'water';
-    $scope.disasters = [
-      //Data retrieved from govenment services, parsed and stored on our local
-      //databases.
-      { 'name': 'Wild Fire 1',
-        'description': 'Trees and stuff burning.',
-        'zip': 93309,
-        'water': 5000,
-        'waterAdjusted': 500,
-        'food': 3000,
-        'foodAdjusted': 1000,
-        'gas': 200,
-        'gasAdjusted': 100,
-        'medicine': 50,
-        'medicineAdjusted':100,
-        'money': 5000,
-        'moneyAdjusted': 1000,
-      },
-      { 'name': 'Wild Fire 1',
-        'description': 'Look at me, I\'m burning.',
-        'zip': 93268,
-        'water': 2000,
-        'waterAdjusted': 0,
-        'food': 1000,
-        'foodAdjusted': -200,
-        'gas': 100,
-        'gasAdjusted': 0,
-        'medicine': 0,
-        'medicineAdjusted': 50,
-        'money': 5000,
-        'moneyAdjusted': 2000
-      },
-      { 'name': 'Wild Fire 3',
-        'discription': 'Stop, Drop and Roll.',
-        'zip': 93203,
-        'water': 5000,
-        'waterAdjusted': 500,
-        'food': 3000,
-        'foodAdjusted': 1000,
-        'gas': 200,
-        'gasAdjusted':-100,
-        'medicine': 50,
-        'medicineAdjusted':100,
-        'money': 5000,
-        'moneyAdjusted': 1000
-      },
-      { 'name': 'Wild Fire 4',
-        'description': 'This is fine.',
-        'zip':  93280,
-        'water': 5000,
-        'waterAdjusted': 500,
-        'food': 3000,
-        'foodAdjusted': 1000,
-        'gas': 200,
-        'gasAdjusted':-100,
-        'medicine': 50,
-        'medicineAdjusted':100,
-        'money': 5000,
-        'moneyAdjusted': 1000
-      },
-      { 'name': 'Wild Fire 5',
-        'description': 'Fight fire with fire.',
-        'zip': 93263,
-        'water': 5000,
-        'waterAdjusted': 500,
-        'food': 3000,
-        'foodAdjusted': 1000,
-        'gas': 200,
-        'gasAdjusted':-100,
-        'medicine': 50,
-        'medicineAdjusted':100,
-        'money': 5000,
-        'moneyAdjusted': 1000
-      },
-    ];
-    
 
+    $scope.getBaseNeed = function() {
+      var type = $scope.selectedType;
+      return $scope.selectedDisaster[type];
+    };
+    $scope.getAdjustedNeed = function() {
+      var type = $scope.selectedType;
+      var selectAdjustedType = type + 'Adjusted';
+      return $scope.selectedDisaster[selectAdjustedType];
+    };
 
+    $scope.getResourceRecipientTotal = function(zip) {
+      return $rootScope.queryzip($rootScope.submittedRecipients, $scope.selectedType, zip)
+    };
 
+    $scope.getReadjustedResourceNeed = function(zip) {
+      var type = $scope.selectedType;
+      var base = $scope.selectedDisaster[type];
+      var selectAdjustedType = type + 'Adjusted';
+      var adjusted = $scope.selectedDisaster[selectAdjustedType];
+      var resourceQuantity = $scope.selectedDisaster[type];
+      var recipientAmountConfirmed = $scope.getResourceRecipientTotal(type, zip);
+      return base + adjusted - recipientAmountConfirmed;
+    };
 
     $scope.selectedDisaster = {};
     $scope.openIndex = -1;
@@ -120,6 +66,4 @@ angular.module('techftw')
     $scope.selectType = function(t) {
       $scope.selectedType = t;
     }
-    
-
   });
