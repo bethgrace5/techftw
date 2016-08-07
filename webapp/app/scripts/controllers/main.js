@@ -17,8 +17,8 @@ angular.module('techftw')
     $scope.systemUser.email = 'testuser@test.com';
     $scope.systemUser.password ='password';
 
-    globalFactory.generateRecipientMockData();
-    globalFactory.generateDisasterMockData();
+    //globalFactory.generateRecipientMockData();
+    //globalFactory.generateDisasterMockData();
 
     $scope.activeTab = function(tabName) {
       if (tabName === $scope.tab) {
