@@ -166,7 +166,7 @@ input.ng-valid.ng-touched {
 
 .text-showing {
   font-weight: 300;
-  max-height: 400px;
+  max-height: 500px;
   overflow: hidden;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -188,4 +188,10 @@ input.ng-valid.ng-touched {
 /* Address box */
 .addressbox {
   margin-bottom: 10px;
+}
+.mobile-bar
+{
+  height: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid blue;
 }

@@ -5,9 +5,10 @@
     <strong> Resource type </strong>
   </div>
   <div class="col-xs-6 col-sm-3">
+  
     <strong> Current need </strong>
   </div>
-  <div class="col-xs-12 col-sm-5">
+  <div class="hidden-xs col-xs-12 col-sm-5">
     <strong> Explanation </strong>
   </div>
 </div>
@@ -19,7 +20,9 @@
     <button ng-click="selectType('medicine')" ng-class="getClass('medicine')"> Medicine </button>
     <button ng-click="selectType('money')" ng-class="getClass('money')"> Money </button>
   </div>
+
   <div class="col-xs-6 col-sm-3">
+  <br>
     <p> {{selectedDisaster.water}} </p>
     <p> {{selectedDisaster.food}} </p>
     <p> {{selectedDisaster.gas}} </p>
@@ -27,16 +30,23 @@
     <p> {{selectedDisaster.money}} </p>
   </div>
   <div class="col-xs-12 col-sm-5">
-
+<hr class="visible-xs"></hr>
     <div class="row">
       <div class="col-xs-6">
+      <br class="visible-xs"></br>
+
+        <p class="visible-xs"><strong> Explaination </strong></p>
         <p> Base need: </p>
         <p><span>+</span> adjusted need: </p>
         <p><span>-</span> recieved: </p>
         <p> total need: </p>
       </div>
+      <br class="visible-xs"></br>
       <div class="col-xs-6">
+        
+
         <div>
+          <p class="visible-xs" style="color:transparent;">.</p>
           <p> {{getBaseNeed()}} </p>
           <p> {{getAdjustedNeed()}} </p>
           <!--<p><input class="form-control" value="1" type="number" ng-model="selectedDisaster[selectedType+'Adjusted']" ng-change="'*fill me in*'"></input></p>
