@@ -166,7 +166,7 @@ angular.module('techftw')
       ]
     };
     
-    function pushDisasters() {
+    service.pushDisasters = function() {
       $http({
         'url': 'https://techftw-237d9.firebaseio.com/disasters.json',
         'method': "PUT",
@@ -176,7 +176,7 @@ angular.module('techftw')
       });
     }
     
-    function pullDisasters(func = null) {
+    service.pullDisasters = function(func = null) {
       $http({
         'url': 'https://techftw-237d9.firebaseio.com/disasters.json',
         'method': "GET"
