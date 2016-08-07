@@ -23,11 +23,11 @@
 
   <div class="col-xs-6 col-sm-3">
   <br>
-    <p> {{getResourceNeed(d.zip, "water")}} </p>
-    <p> {{getResourceNeed(d.zip, "food")}} </p>
-    <p> {{getResourceNeed(d.zip, "gas")}} </p>
-    <p> {{getResourceNeed(d.zip, "medicine")}} </p>
-    <p> {{getResourceNeed(d.zip, "money")}} </p>
+    <p> {{selectedDisaster.water}} </p>
+    <p> {{selectedDisaster.food}} </p>
+    <p> {{selectedDisaster.gas}} </p>
+    <p> {{selectedDisaster.medicine}} </p>
+    <p> {{selectedDisaster.money}} </p>
   </div>
   <div class="col-xs-12 col-sm-5">
 <hr class="visible-xs"></hr>
@@ -39,6 +39,7 @@
         <p> Base need: </p>
         <p><span>+</span> adjusted need: </p>
         <p><span>-</span> recieved: </p>
+        <div class="mobile-bar"></div>
         <p> total need: </p>
       </div>
       <br class="visible-xs"></br>
@@ -50,6 +51,7 @@
           <p> {{getBaseNeed()}} </p>
           <p><input class="form-control" type="number" ng-change="setAdjustedNeed(newAdjustedneed)" ng-model="newAdjustedneed"></input></p>
           <p> {{getResourceRecipientTotal(d.zip)}} </p>
+          <div class="mobile-bar"></div>
           <p> {{getReadjustedResourceNeed(d.zip)}} </p>
         </div>
       </div>
