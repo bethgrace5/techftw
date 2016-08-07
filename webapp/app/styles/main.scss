@@ -10,6 +10,24 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding: 0.2em 0;
 }
 
+.panel-header {
+  background-color: #ccccb3;
+}
+.panel-default {
+  background-color: #ccccb3;
+}
+
+.main-container {
+  padding-bottom: 40px;
+  border: 2px solid red;
+}
+
+.footer {
+  position:fixed;
+  bottom:0;
+  width: 100%;
+}
+
 body {
   padding: 0;
 }
