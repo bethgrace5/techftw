@@ -96,3 +96,14 @@ body {
   input.ng-valid.ng-touched {
     background-color: #78FA89;
   }
+/*Resource click highlight */
+  .clickable:hover{
+  cursor:pointer;
+  background-color:#00ace6;
+}
+  
+  /*Address box*/
+  .addressbox {
+    margin-top: 10px;
+
+  }
