@@ -14,6 +14,7 @@ angular.module('techftw')
     $scope.data = {};
 
     globalFactory.generateRecipientMockData();
+    globalFactory.generateDisasterMockData();
 
     $scope.activeTab = function(tabName) {
       if (tabName === $scope.tab) {
@@ -23,11 +24,6 @@ angular.module('techftw')
     }
     $scope.user = '';
     $scope.pass = '';
-    $scope.animal = 'cat';
-
-    $scope.changeAnimal = function() {
-      $scope.animal = 'dog';
-    }
 
     $scope.request = function() {
       $http({
@@ -41,131 +37,6 @@ angular.module('techftw')
       });
     }
 
-    //$rootScope.submittedRecipients = [];
-    //Build disaster details map with real data
-    $scope.disasters = [
-      {'id':1,
-       'name': 'Erskine',
-       'recieved':{
-          'water':{ 'qty':10},
-          'food':{ 'qty':10},
-          'towels':{ 'qty':10},
-          'medicine':{'qty':10}
-       },
-       'needs':{
-          'water': { 'qty':10},
-          'food': { 'qty':70},
-          'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
-       },
-       'address': [ 'All For One One For All Movement',
-          '20 Panorama Dr,',
-          'Wofford Heights, CA',
-          '93285'
-       ],
-       'phone': '(760) 379-5615'
-      },
-      {'id':2, 'name': 'Disaster 2',
-       'recieved':{
-          'water':{ 'qty':10},
-          'food':{ 'qty':10},
-          'towels':{ 'qty':10},
-          'medicine':{'qty':10}
-       },
-       'needs':{
-          'water': { 'qty':10},
-          'food': { 'qty':70},
-          'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
-       },
-       'address': [ 'Donation site 2',
-          '1234 Example St,',
-          'City, CA',
-          '99999'
-       ],
-       'phone': '(555) 555-5555'
-      },
-      {'id':3, 'name': 'Disaster 3',
-       'recieved':{
-          'water':{ 'qty':10},
-          'food':{ 'qty':10},
-          'towels':{ 'qty':10},
-          'medicine':{'qty':10}
-       },
-       'needs':{
-          'water': { 'qty':10},
-          'food': { 'qty':70},
-          'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
-       },
-       'address': [ 'Donation site 3',
-          '1234 Example St,',
-          'City, CA',
-          '99999'
-       ],
-       'phone': '(555) 555-5555'
-      },
-      {'id':4, 'name': 'Disaster 4',
-       'recieved':{
-          'water':{ 'qty':10},
-          'food':{ 'qty':10},
-          'towels':{ 'qty':10},
-          'medicine':{'qty':10}
-       },
-       'needs':{
-          'water': { 'qty':10},
-          'food': { 'qty':70},
-          'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
-       },
-       'address': [ 'Donation site 4',
-          '1234 Example St,',
-          'City, CA',
-          '99999'
-       ],
-       'phone': '(555) 555-5555'
-      },
-      {'id':5, 'name': 'Disaster 5',
-       'recieved':{
-          'water':{ 'qty':10},
-          'food':{ 'qty':10},
-          'towels':{ 'qty':10},
-          'medicine':{'qty':10}
-       },
-       'needs':{
-          'water': { 'qty':10},
-          'food': { 'qty':70},
-          'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
-       },
-       'address': [ 'Donation site 5',
-          '1234 Example St,',
-          'City, CA',
-          '99999'
-       ],
-       'phone': '(555) 555-5555'
-      },
-      {'id':6, 'name': 'Disaster 6',
-       'recieved':{
-          'water':{ 'qty':10},
-          'food':{ 'qty':10},
-          'towels':{ 'qty':10},
-          'medicine':{'qty':10}
-       },
-       'needs':{
-          'water': { 'qty':10},
-          'food': { 'qty':70},
-          'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
-       },
-       'address': [ 'Donation site 6',
-          '1234 Example St,',
-          'City, CA',
-          '99999'
-       ],
-       'phone': '(555) 555-5555'
-      },
-    ];
     $rootScope.queryzip = function(recipients,supplyType,zipIn = null) {
       var res = {};
       var zip;
