@@ -15,10 +15,17 @@ angular.module('techftw')
       var type = $scope.selectedType;
       return $scope.selectedDisaster[type];
     };
+
     $scope.getAdjustedNeed = function() {
       var type = $scope.selectedType;
       var selectAdjustedType = type + 'Adjusted';
       return $scope.selectedDisaster[selectAdjustedType];
+    };
+
+    $scope.setAdjustedNeed = function() {
+      var type = $scope.selectedType;
+      var selectAdjustedType = type + 'Adjusted';
+      $scope.selectedDisaster[selectAdjustedType] = 12345
     };
 
     $scope.getResourceRecipientTotal = function(zip) {
