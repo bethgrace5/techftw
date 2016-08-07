@@ -125,7 +125,7 @@ angular.module('techftw')
       $rootScope.submittedRecipients = [];
     };
     
-    $scope.queryzip = function(recipients,supplyType) {
+    $scope.queryzip = function(recipients,supplyType,zipIn = null) {
       var res = {};
       for (var i in recipients) {
         let recip = recipients[i];
@@ -137,16 +137,20 @@ angular.module('techftw')
           res[zip] += 1;
         }
       }
-      
-      var sortable = [];
-      for (var r in res) {
-        sortable.push([r, res[r]]);
+      if (zipIn === null) {
+        var sortable = [];
+        for (var r in res) {
+          sortable.push([r, res[r]]);
+        }
+        
+        sortable.sort(function(a,b) {
+          return a[1] - b[1];
+        });
+        sortable.reverse();
+        $scope.toprecipients = sortable;
+        return sortable;
+      } else {
+        return res[zip];
       }
-      
-      sortable.sort(function(a,b) {
-        return a[1] - b[1];
-      });
-      sortable.reverse();
-      $scope.toprecipients = sortable;
     }
   });

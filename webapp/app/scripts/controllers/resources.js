@@ -10,9 +10,11 @@
 angular.module('techftw')
   .controller('ResourcesCtrl', function ($scope, $rootScope, $routeParams) {
     $scope.disasters = [
+      //Data retrieved from govenment services, parsed and stored on our local
+      //databases.
       { 'name': 'Wild Fire 1',
         'description': 'Trees and stuff burning.',
-        'zip': 93280,
+        'zip': 93309,
         'water': 5000,
         'waterAdjusted': 500,
         'food': 3000,
@@ -39,8 +41,36 @@ angular.module('techftw')
         'moneyAdjusted': 2000
       },
       { 'name': 'Wild Fire 3',
-        'description': 'Stop, Drop and Roll.',
-        'zip': 93280,
+        'discription': 'Stop, Drop and Roll.',
+        'zip': 93203,
+        'water': 5000,
+        'waterAdjusted': 500,
+        'food': 3000,
+        'foodAdjusted': 1000,
+        'gas': 200,
+        'gasAdjusted':-100,
+        'medicine': 50,
+        'medicineAdjusted':100,
+        'money': 5000,
+        'moneyAdjusted': 1000
+      },
+      { 'name': 'Wild Fire 4',
+        'description': 'This is fine.',
+        'zip':  93280,
+        'water': 5000,
+        'waterAdjusted': 500,
+        'food': 3000,
+        'foodAdjusted': 1000,
+        'gas': 200,
+        'gasAdjusted':-100,
+        'medicine': 50,
+        'medicineAdjusted':100,
+        'money': 5000,
+        'moneyAdjusted': 1000
+      },
+      { 'name': 'Wild Fire 5',
+        'description': 'Fight fire with fire.',
+        'zip': 93263,
         'water': 5000,
         'waterAdjusted': 500,
         'food': 3000,
@@ -53,6 +83,18 @@ angular.module('techftw')
         'moneyAdjusted': 1000
       },
     ];
+
+    function getResourceRecipientTotal(resource, zip) {
+      //placeholder
+      return 0;
+    };
+
+    function getReadjustedResourceNeed(resource, resourceAdjusted, zip) {
+      return
+        resource
+        + resourceAdjusted
+        - getResourceRecipientTotal(resource, zip);
+    };
 
     $scope.selectedDisaster = {};
     $scope.openIndex = -1;
