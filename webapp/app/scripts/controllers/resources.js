@@ -45,6 +45,15 @@ angular.module('techftw')
       return base + adjusted - recipientAmountConfirmed;
     };
 
+    $scope.getResourceNeed = function(zip, type) {
+      var base = $scope.selectedDisaster[type];
+      var selectAdjustedType = type + 'Adjusted';
+      var adjusted = $scope.selectedDisaster[selectAdjustedType];
+      var resourceQuantity = $scope.selectedDisaster[type];
+      var recipientAmountConfirmed = $scope.getResourceRecipientTotal(type, zip);
+      return base + adjusted - recipientAmountConfirmed;
+    };
+
     $scope.selectedDisaster = {};
     $scope.openIndex = -1;
     $scope.isOpen = function(indice)
