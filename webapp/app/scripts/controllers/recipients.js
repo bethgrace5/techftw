@@ -8,7 +8,40 @@
  * Controller of the techftw
  */
 angular.module('techftw')
-.controller('RecipientsCtrl', function ($scope, $rootScope) {
+.controller('RecipientsCtrl', function ($scope, $rootScope, $http) {
+
+    function pushToFire() {
+      $http({
+        'url': 'https://techftw-237d9.firebaseio.com/recipients.json',
+        'method': "PUT",
+        'data': $rootScope.submittedRecipients
+      }).then(function(success) {
+        return success.data;
+      });
+    };
+    
+    function pullFromFire() {
+      $http({
+        'url': 'https://techftw-237d9.firebaseio.com/recipients.json',
+        'method': "GET"
+      }).then(function(success) {
+        if (success.data !== null) {
+          $rootScope.submittedRecipients = success.data;
+        }
+        loadMockData();
+        pushToFire();
+        $scope.user = {};
+        $scope.user.address= '';
+        $scope.user.city= '';
+        $scope.user.zip= '';
+        $scope.user.county = '';
+        $scope.user.food = false;
+        $scope.user.water = false;
+        $scope.user.gas = false;
+        $scope.user.medicine = false;
+        $scope.user.money = false;
+      });
+    };
 
     //-------------------------mock data
     function getRandomAddress() {
@@ -51,53 +84,52 @@ angular.module('techftw')
       ];
       return streetNames[Math.floor(Math.random() * (2 - 0) + 0)];
     };
+    
+    function loadMockData() {
 
-    $rootScope.dataNotInitiated = true;
+      $rootScope.dataNotInitiated = true;
 
-    if($rootScope.dataNotInitiated) {
-      $rootScope.dataNotInitiated = false;
+      if($rootScope.dataNotInitiated) {
+        $rootScope.dataNotInitiated = false;
 
-      $scope.user = {};
-      $scope.user.address= '';
-      $scope.user.city= '';
-      $scope.user.zip= '';
-      $scope.user.county = '';
-      $scope.user.food = false;
-      $scope.user.water = false;
-      $scope.user.gas = false;
-      $scope.user.medicine = false;
-      $scope.user.money = false;
-
-
-
-      for (var i = 0; i < 30000; i++) {
         $scope.user = {};
-        $scope.user.address= getRandomAddress() + ' ' + getRandomStreetName();
-        var city = getRandomCityZip()[0];
-        var zip= getRandomCityZip()[1];
-        $scope.user.city= city;
-        $scope.user.zip= zip;
-        $scope.user.county = 'Kern County' ;
-        $scope.user.food = getRandomResource();
-        $scope.user.water = getRandomResource();
-        $scope.user.gas = getRandomResource();
-        $scope.user.medicine = getRandomResource();
-        $scope.user.money = getRandomResource();
-        $rootScope.submittedRecipients.push(angular.copy($scope.user));
-      };
-    };
-    //-------------------------mock data
+        $scope.user.address= '';
+        $scope.user.city= '';
+        $scope.user.zip= '';
+        $scope.user.county = '';
+        $scope.user.food = false;
+        $scope.user.water = false;
+        $scope.user.gas = false;
+        $scope.user.medicine = false;
+        $scope.user.money = false;
 
-    $scope.user = {};
-    $scope.user.address= '';
-    $scope.user.city= '';
-    $scope.user.zip= '';
-    $scope.user.county = '';
-    $scope.user.food = false;
-    $scope.user.water = false;
-    $scope.user.gas = false;
-    $scope.user.medicine = false;
-    $scope.user.money = false;
+        
+
+        for (var i = 0; i < 3; i++) {
+          $scope.user = {};
+          $scope.user.address= getRandomAddress() + ' ' + getRandomStreetName();
+          var city = getRandomCityZip()[0];
+          var zip= getRandomCityZip()[1];
+          $scope.user.city= city;
+          $scope.user.zip= zip;
+          $scope.user.county = 'Kern County' ;
+          $scope.user.food = getRandomResource();
+          $scope.user.water = getRandomResource();
+          $scope.user.gas = getRandomResource();
+          $scope.user.medicine = getRandomResource();
+          $scope.user.money = getRandomResource();
+          $rootScope.submittedRecipients.push(angular.copy($scope.user));
+          
+        };
+
+      };
+      
+      
+      
+    };
+    pullFromFire();
+    //-------------------------mock data
+    
 
     $scope.submit= function(user) {
       if (!(user.food ||
@@ -137,7 +169,7 @@ angular.module('techftw')
       var res = {};
       for (var i in recipients) {
         let recip = recipients[i];
-        let zip = recip.zip;
+        var zip = recip.zip;
         if (!res.hasOwnProperty(zip)) {
           res[zip] = 0;
         }
@@ -156,8 +188,10 @@ angular.module('techftw')
         });
         sortable.reverse();
         $scope.toprecipients = sortable;
+
         return sortable;
       } else {
+              console.log(res[zip]);
         return res[zip];
       }
     }
