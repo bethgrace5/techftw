@@ -2,13 +2,15 @@
     <div class="row" ng-repeat = "d in disasters">
       <div class="col col-xs-12">
         <div class="panel panel-default">
-          <div class="panel-body">
-            <a href="#/resources/{{d.id}}">
-              <p class="lead text-center">{{d.name}}</p>
-            </a>
+          <div ng-click="changeIndex($index)" class="panel-body clickable">
+
+            
+              <p class="lead text-center ">{{d.name}}</p>
+              <div ng-show="openIndex == $index"> <ng-include src="'./views/resource-details.html'"></ng-include> </div>
           </div>
         </div>
       </div>
     </div>
-
+    <div ng-show="false">some text
+    </div>
 

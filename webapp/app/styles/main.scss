@@ -96,3 +96,7 @@ body {
   input.ng-valid.ng-touched {
     background-color: #78FA89;
   }
+  .clickable:hover{
+  cursor:pointer;
+  background-color:#00ace6;
+  }
