@@ -9,6 +9,7 @@
  */
 angular.module('techftw')
   .controller('ResourcesCtrl', function ($scope, $rootScope, $routeParams) {
+    $scope.selectedType = 'water';
     $scope.disasters = [
       //Data retrieved from govenment services, parsed and stored on our local
       //databases.
@@ -90,10 +91,7 @@ angular.module('techftw')
     };
 
     function getReadjustedResourceNeed(resource, resourceAdjusted, zip) {
-      return
-        resource
-        + resourceAdjusted
-        - getResourceRecipientTotal(resource, zip);
+      return resource + resourceAdjusted - getResourceRecipientTotal(resource, zip);
     };
 
     $scope.selectedDisaster = {};
@@ -113,6 +111,21 @@ angular.module('techftw')
     		$scope.openIndex = -1;
     	else
     		$scope.openIndex = indice;
+    }
+
+    $scope.getClass = function(type) {
+      var style = 'btn btn-default form-control';
+      console.log(type);
+      console.log($scope.selectedType);
+
+        if(type == $scope.selectedType) {
+          style = 'btn btn-primary form-control';
+        }
+      return style;
+    }
+
+    $scope.selectType = function(t) {
+      $scope.selectedType = t;
     }
 
   });
