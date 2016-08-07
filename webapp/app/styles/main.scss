@@ -27,6 +27,36 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 /* nav pills styling */
+.header {
+  ul.nav li a {
+    color: #196666;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+  }
+  ul.nav li.active a {
+    background-color: #33cccc;
+    color: white;
+  }
+  ul.nav li.active a:active {
+    background-color: #33cccc;
+    color: white;
+  }
+
+  .navbar-default .navbar-nav > .active > a, 
+  .navbar-default .navbar-nav > .active > a:focus {
+    background-color: #33cccc;
+    color: white;
+  }
+  .navbar-default .navbar-nav > .active > a:hover {
+    background-color: #29a3a3;
+    color: white;
+  }
+  .navbar-brand {
+    color: #196666;
+  }
+}
+
+/* nav pills styling */
 ul.nav.nav-pills li a {
   color: #196666;
   letter-spacing: 1px;
