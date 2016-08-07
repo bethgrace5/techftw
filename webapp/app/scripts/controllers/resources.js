@@ -84,7 +84,7 @@ angular.module('techftw')
         'moneyAdjusted': 1000
       },
     ];
-
+    
     $scope.getResourceRecipientTotal = function(zip) {
       return $rootScope.queryzip($rootScope.submittedRecipients, $scope.selectedType, zip)
     };
@@ -124,5 +124,6 @@ angular.module('techftw')
     $scope.selectType = function(t) {
       $scope.selectedType = t;
     }
+    
 
   });

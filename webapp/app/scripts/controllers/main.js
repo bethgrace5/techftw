@@ -12,15 +12,16 @@ angular.module('techftw')
     $rootScope.submittedRecipients = [];
     $scope.tab = 'home';
     $scope.data = {};
-
+    $scope.systemUser = {};
+    $scope.systemUser.email = 'testuser@test.com';
+    $scope.systemUser.password ='password';
     $scope.activeTab = function(tabName) {
       if (tabName === $scope.tab) {
         return 'active';
       }
       return '';
     }
-    $scope.user = '';
-    $scope.pass = '';
+    
     $scope.animal = 'cat';
 
     $scope.changeAnimal = function() {
@@ -46,13 +47,15 @@ angular.module('techftw')
           'water':{ 'qty':10},
           'food':{ 'qty':10},
           'towels':{ 'qty':10},
-          'medicine':{'qty':10}
+          'medicine':{'qty':10},
+          'money':{'qty':2}
        },
        'needs':{
           'water': { 'qty':10},
           'food': { 'qty':70},
           'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
+          'medicine':{ 'qty':20},
+          'money':{'qty':5}
        },
        'address': [ 'All For One One For All Movement',
           '20 Panorama Dr,',
@@ -66,13 +69,15 @@ angular.module('techftw')
           'water':{ 'qty':10},
           'food':{ 'qty':10},
           'towels':{ 'qty':10},
-          'medicine':{'qty':10}
+          'medicine':{'qty':10},
+          'money':{'qty':2}
        },
        'needs':{
           'water': { 'qty':10},
           'food': { 'qty':70},
           'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
+          'medicine':{ 'qty':20},
+          'money':{'qty':5}
        },
        'address': [ 'Donation site 2',
           '1234 Example St,',
@@ -86,13 +91,15 @@ angular.module('techftw')
           'water':{ 'qty':10},
           'food':{ 'qty':10},
           'towels':{ 'qty':10},
-          'medicine':{'qty':10}
+          'medicine':{'qty':10},
+          'money':{'qty':2}
        },
        'needs':{
           'water': { 'qty':10},
           'food': { 'qty':70},
           'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
+          'medicine':{ 'qty':20},
+          'money':{'qty':5}
        },
        'address': [ 'Donation site 3',
           '1234 Example St,',
@@ -106,13 +113,15 @@ angular.module('techftw')
           'water':{ 'qty':10},
           'food':{ 'qty':10},
           'towels':{ 'qty':10},
-          'medicine':{'qty':10}
+          'medicine':{'qty':10},
+          'money':{'qty':2}
        },
        'needs':{
           'water': { 'qty':10},
           'food': { 'qty':70},
           'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
+          'medicine':{ 'qty':20},
+          'money':{'qty':5}
        },
        'address': [ 'Donation site 4',
           '1234 Example St,',
@@ -126,13 +135,15 @@ angular.module('techftw')
           'water':{ 'qty':10},
           'food':{ 'qty':10},
           'towels':{ 'qty':10},
-          'medicine':{'qty':10}
+          'medicine':{'qty':10},
+          'money':{'qty':2}
        },
        'needs':{
           'water': { 'qty':10},
           'food': { 'qty':70},
           'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
+          'medicine':{ 'qty':20},
+          'money':{'qty':5}
        },
        'address': [ 'Donation site 5',
           '1234 Example St,',
@@ -146,13 +157,15 @@ angular.module('techftw')
           'water':{ 'qty':10},
           'food':{ 'qty':10},
           'towels':{ 'qty':10},
-          'medicine':{'qty':10}
+          'medicine':{'qty':10},
+          'money':{'qty':2}
        },
        'needs':{
           'water': { 'qty':10},
           'food': { 'qty':70},
           'towels': { 'qty':30},
-          'medicine':{ 'qty':20}
+          'medicine':{ 'qty':20},
+          'money':{'qty':5}
        },
        'address': [ 'Donation site 6',
           '1234 Example St,',
@@ -251,11 +264,12 @@ angular.module('techftw')
       $scope.user.gas = false;
       $scope.user.medicine = false;
       $scope.user.money = false;
-
+      
 
 
       for (var i = 0; i < 30000; i++) {
         $scope.user = {};
+        
         $scope.user.address= getRandomAddress() + ' ' + getRandomStreetName();
         var city = getRandomCityZip()[0];
         var zip= getRandomCityZip()[1];
