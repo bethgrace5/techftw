@@ -9,6 +9,8 @@
  */
 angular.module('techftw')
 .controller('RecipientsCtrl', function ($scope, $rootScope) {
+
+    //-------------------------mock data
     $scope.user = {};
     $scope.user.address= '';
     $scope.user.city= '';
@@ -61,7 +63,7 @@ angular.module('techftw')
       return streetNames[Math.floor(Math.random() * (2 - 0) + 0)];
     };
 
-    for (var i = 0; i < 50000; i++) {
+    for (var i = 0; i < 30000; i++) {
       $scope.user = {};
       $scope.user.address= getRandomAddress() + ' ' + getRandomStreetName();
       var city = getRandomCityZip()[0];
@@ -76,6 +78,20 @@ angular.module('techftw')
       $scope.user.money = getRandomResource();
       $rootScope.submittedRecipients.push(angular.copy($scope.user));
     };
+    //-------------------------mock data
+
+    $scope.user = {};
+    $scope.user.address= '';
+    $scope.user.city= '';
+    $scope.user.zip= '';
+    $scope.user.county = '';
+    $scope.user.food = false;
+    $scope.user.water = false;
+    $scope.user.gas = false;
+    $scope.user.medicine = false;
+    $scope.user.money = false;
+
+
 
     $scope.submit= function(user) {
       if (!(user.food ||
