@@ -69,7 +69,6 @@ angular.module('techftw')
         return sortable;
       } else {
         $rootScope.zipneed = res;
-        console.log(res);
         return res[zip];
       }
     }

@@ -5,7 +5,7 @@
     <strong> Resource type </strong>
   </div>
   <div class="col-xs-6 col-sm-3">
-  
+
     <strong> Current need </strong>
   </div>
   <div class="hidden-xs col-xs-12 col-sm-5">
@@ -43,21 +43,18 @@
       </div>
       <br class="visible-xs"></br>
       <div class="col-xs-6">
-        
+
 
         <div>
           <p class="visible-xs" style="color:transparent;">.</p>
           <p> {{getBaseNeed()}} </p>
-          <p> {{getAdjustedNeed()}} </p>
-          <!--<p><input class="form-control" value="1" type="number" ng-model="selectedDisaster[selectedType+'Adjusted']" ng-change="'*fill me in*'"></input></p>
--->
+          <p><input class="form-control" type="number" ng-change="setAdjustedNeed(newAdjustedneed)" ng-model="newAdjustedneed"></input></p>
           <p> {{getResourceRecipientTotal(d.zip)}} </p>
           <p> {{getReadjustedResourceNeed(d.zip)}} </p>
         </div>
       </div>
     </div>
 
-      <input type="button" ng-click="setAdjustedNeed(9937)" value="Set" />
   </div>
 </div>
 

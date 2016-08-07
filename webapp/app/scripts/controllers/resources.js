@@ -8,7 +8,7 @@
  * Controller of the techftw
  */
 angular.module('techftw')
-  .controller('ResourcesCtrl', function ($scope, $rootScope, globalFactory) {
+  .controller('ResourcesCtrl', function ($timeout, $scope, $rootScope, globalFactory) {
     globalFactory.pullDisasters();
     $scope.selectedType = 'water';
     $rootScope.tab = 'resources';
@@ -67,6 +67,7 @@ angular.module('techftw')
     $scope.changeIndex = function(indice)
     {
       $scope.selectedDisaster = $scope.disasters[indice];
+      $scope.newAdjustedneed = $scope.getAdjustedNeed();
     	if(indice == $scope.openIndex)
     		$scope.openIndex = -1;
     	else
