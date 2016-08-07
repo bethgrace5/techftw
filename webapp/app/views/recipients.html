@@ -1,13 +1,18 @@
 <div class="panel panel-default">
-  Input Recipient Info
   <div class="panel-body">
     <form name="submitForm" novalidate class="recipient-form" >
-      Name: <input type="text" ng-model="user.name" required /><br />
+      Log Household Resource Recipient <br />
       Address: <input type="text" ng-model="user.address" required /><br />
       City: <input type="text" ng-model="user.city" required /><br />
       Zip Code: <input type="text" ng-model="user.zipcode" required /><br />
       County: <input type="text" ng-model="user.county" required /><br />
-      E-mail: <input type="email" ng-model="user.email" /><br />
+
+      Check Select Household Resource Received <br />
+      Food <input type="checkbox" ng-model="user.food" ><br />
+      Water <input type="checkbox" ng-model="user.water"><br />
+      Gas <input type="checkbox" ng-model="user.gas"><br />
+      Medicine <input type="checkbox" ng-model="user.medicine"><br />
+      Money <input type="checkbox" ng-model="user.money"><br />
       <br />
       <!-- <input type="button" ng-click="reset()" value="Reset" /> --!>
       <input type="submit"
