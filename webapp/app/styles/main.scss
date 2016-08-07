@@ -52,18 +52,22 @@ div.panel-heading.dark, div.panel-heading {
 }
 
 .main-container {
-  padding-bottom: 40px;
-  border: 2px solid red;
+  margin-bottom: 70px;
 }
 
 .footer {
   position:fixed;
   bottom:0;
+  background-color: #404040;
   width: 100%;
+  p {
+    color: white;
+  }
 }
 
 body {
   padding: 0;
+  /* background-color: #ecf2f9; */
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

@@ -10,15 +10,15 @@
 angular.module('techftw')
   .controller('MainCtrl', function ($scope, $rootScope, $http, globalFactory) {
     $rootScope.submittedRecipients = [];
-    $scope.tab = 'home';
+    $rootScope.tab = 'home';
     $scope.data = {};
 
     $scope.systemUser = {};
     $scope.systemUser.email = 'testuser@test.com';
     $scope.systemUser.password ='password';
 
-    globalFactory.generateRecipientMockData();
-    globalFactory.generateDisasterMockData();
+    //globalFactory.generateRecipientMockData();
+    //globalFactory.generateDisasterMockData();
 
     $scope.activeTab = function(tabName) {
       if (tabName === $scope.tab) {
