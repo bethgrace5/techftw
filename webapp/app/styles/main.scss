@@ -10,6 +10,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding: 0.2em 0;
 }
 
+
+/* primary button styling */
 .btn-primary {
   /* lighter color than hover */
   background-color: #33cccc;
@@ -24,6 +26,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   letter-spacing: 1px;
 }
 
+/* nav pills styling */
 ul.nav.nav-pills li a {
   color: #196666;
   letter-spacing: 1px;
@@ -37,6 +40,7 @@ ul.nav.nav-pills li.active a {
   color: white;
 }
 
+/* panel styling */
 div.panel-heading.dark, div.panel-heading {
   background-color: #666633;
   font-size: 1.3em;
@@ -162,7 +166,7 @@ input.ng-valid.ng-touched {
 
 .text-showing {
   font-weight: 300;
-  max-height: 300px;
+  max-height: 400px;
   overflow: hidden;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
