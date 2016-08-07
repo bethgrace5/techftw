@@ -11,17 +11,6 @@ angular.module('techftw')
 .controller('RecipientsCtrl', function ($scope, $rootScope) {
 
     //-------------------------mock data
-    $scope.user = {};
-    $scope.user.address= '';
-    $scope.user.city= '';
-    $scope.user.zip= '';
-    $scope.user.county = '';
-    $scope.user.food = false;
-    $scope.user.water = false;
-    $scope.user.gas = false;
-    $scope.user.medicine = false;
-    $scope.user.money = false;
-
     function getRandomAddress() {
       return Math.floor(Math.random() * (29999 - 10000) + 10000);
     };
@@ -63,20 +52,39 @@ angular.module('techftw')
       return streetNames[Math.floor(Math.random() * (2 - 0) + 0)];
     };
 
-    for (var i = 0; i < 30000; i++) {
+    $rootScope.dataNotInitiated = true;
+
+    if($rootScope.dataNotInitiated) {
+      $rootScope.dataNotInitiated = false;
+
       $scope.user = {};
-      $scope.user.address= getRandomAddress() + ' ' + getRandomStreetName();
-      var city = getRandomCityZip()[0];
-      var zip= getRandomCityZip()[1];
-      $scope.user.city= city;
-      $scope.user.zip= zip;
-      $scope.user.county = 'Kern County' ;
-      $scope.user.food = getRandomResource();
-      $scope.user.water = getRandomResource();
-      $scope.user.gas = getRandomResource();
-      $scope.user.medicine = getRandomResource();
-      $scope.user.money = getRandomResource();
-      $rootScope.submittedRecipients.push(angular.copy($scope.user));
+      $scope.user.address= '';
+      $scope.user.city= '';
+      $scope.user.zip= '';
+      $scope.user.county = '';
+      $scope.user.food = false;
+      $scope.user.water = false;
+      $scope.user.gas = false;
+      $scope.user.medicine = false;
+      $scope.user.money = false;
+
+
+
+      for (var i = 0; i < 30000; i++) {
+        $scope.user = {};
+        $scope.user.address= getRandomAddress() + ' ' + getRandomStreetName();
+        var city = getRandomCityZip()[0];
+        var zip= getRandomCityZip()[1];
+        $scope.user.city= city;
+        $scope.user.zip= zip;
+        $scope.user.county = 'Kern County' ;
+        $scope.user.food = getRandomResource();
+        $scope.user.water = getRandomResource();
+        $scope.user.gas = getRandomResource();
+        $scope.user.medicine = getRandomResource();
+        $scope.user.money = getRandomResource();
+        $rootScope.submittedRecipients.push(angular.copy($scope.user));
+      };
     };
     //-------------------------mock data
 
@@ -124,15 +132,15 @@ angular.module('techftw')
     $scope.reset = function() {
       $rootScope.submittedRecipients = [];
     };
-    
-    $scope.queryzip = function(recipients,supplyType,zipIn = null) {
+
+    $rootScope.queryzip = function(recipients,supplyType,zipIn = null) {
       var res = {};
       for (var i in recipients) {
         let recip = recipients[i];
         let zip = recip.zip;
         if (!res.hasOwnProperty(zip)) {
           res[zip] = 0;
-        }  
+        }
         if (recip[supplyType] == true) {
           res[zip] += 1;
         }
@@ -142,7 +150,7 @@ angular.module('techftw')
         for (var r in res) {
           sortable.push([r, res[r]]);
         }
-        
+
         sortable.sort(function(a,b) {
           return a[1] - b[1];
         });

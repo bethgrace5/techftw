@@ -86,8 +86,8 @@ angular.module('techftw')
     ];
 
     function getResourceRecipientTotal(resource, zip) {
-      //placeholder
-      return 0;
+      return
+        $rootScope.zipquery($rootScope.submittedRecipients, resource, zip)
     };
 
     function getReadjustedResourceNeed(resource, resourceAdjusted, zip) {
