@@ -10,7 +10,6 @@
 angular.module('techftw')
 .controller('RecipientsCtrl', function ($scope, $rootScope) {
 
-
     $scope.user = {};
     $scope.user.address= '';
     $scope.user.city= '';
@@ -22,6 +21,7 @@ angular.module('techftw')
     $scope.user.medicine = false;
     $scope.user.money = false;
 
+    //submit new recipient entry
     $scope.submit= function(user) {
       if (!(user.food ||
           user.water ||
@@ -47,13 +47,4 @@ angular.module('techftw')
         user.money = false;
       })
     };
-
-    $scope.resourceIsEmpty = function(user) {
-      return false;
-    };
-
-    $scope.reset = function() {
-      $rootScope.submittedRecipients = [];
-    };
-
   });
