@@ -106,6 +106,15 @@ input.ng-valid.ng-touched {
   cursor:pointer;
   background-color:#00ace6;
 }
+  .clickable {
+   opacity: 1;
+   transition: all .45s linear;
+   -moz-transition: all .45s linear;
+   -webkit-transition: all .45s linear;
+
+   }
+
+  
 
 /* Address box */
 .addressbox {
