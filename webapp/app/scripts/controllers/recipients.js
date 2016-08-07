@@ -155,6 +155,7 @@ angular.module('techftw')
         user.gas = false;
         user.medicine = false;
         user.money = false;
+        pushToFire();
       })
     };
 
