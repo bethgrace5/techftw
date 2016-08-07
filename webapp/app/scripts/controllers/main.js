@@ -53,7 +53,13 @@ angular.module('techftw')
           'food': { 'qty':70},
           'towels': { 'qty':30},
           'medicine':{ 'qty':20}
-       }
+       },
+       'address': [ 'All For One One For All Movement',
+          '20 Panorama Dr,',
+          'Wofford Heights, CA',
+          '93285'
+       ],
+       'phone': '(760) 379-5615'
       },
       {'id':2, 'name': 'Disaster 2',
        'recieved':{
@@ -67,7 +73,13 @@ angular.module('techftw')
           'food': { 'qty':70},
           'towels': { 'qty':30},
           'medicine':{ 'qty':20}
-       }
+       },
+       'address': [ 'Donation site 2',
+          '1234 Example St,',
+          'City, CA',
+          '99999'
+       ],
+       'phone': '(555) 555-5555'
       },
       {'id':3, 'name': 'Disaster 3',
        'recieved':{
@@ -81,7 +93,13 @@ angular.module('techftw')
           'food': { 'qty':70},
           'towels': { 'qty':30},
           'medicine':{ 'qty':20}
-       }
+       },
+       'address': [ 'Donation site 3',
+          '1234 Example St,',
+          'City, CA',
+          '99999'
+       ],
+       'phone': '(555) 555-5555'
       },
       {'id':4, 'name': 'Disaster 4',
        'recieved':{
@@ -95,7 +113,13 @@ angular.module('techftw')
           'food': { 'qty':70},
           'towels': { 'qty':30},
           'medicine':{ 'qty':20}
-       }
+       },
+       'address': [ 'Donation site 4',
+          '1234 Example St,',
+          'City, CA',
+          '99999'
+       ],
+       'phone': '(555) 555-5555'
       },
       {'id':5, 'name': 'Disaster 5',
        'recieved':{
@@ -109,7 +133,13 @@ angular.module('techftw')
           'food': { 'qty':70},
           'towels': { 'qty':30},
           'medicine':{ 'qty':20}
-       }
+       },
+       'address': [ 'Donation site 5',
+          '1234 Example St,',
+          'City, CA',
+          '99999'
+       ],
+       'phone': '(555) 555-5555'
       },
       {'id':6, 'name': 'Disaster 6',
        'recieved':{
@@ -123,7 +153,13 @@ angular.module('techftw')
           'food': { 'qty':70},
           'towels': { 'qty':30},
           'medicine':{ 'qty':20}
-       }
+       },
+       'address': [ 'Donation site 6',
+          '1234 Example St,',
+          'City, CA',
+          '99999'
+       ],
+       'phone': '(555) 555-5555'
       },
     ];
   });
