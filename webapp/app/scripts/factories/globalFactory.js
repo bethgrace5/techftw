@@ -6,7 +6,6 @@ angular.module('techftw')
 
     console.log('factory init');
 
-
     var service = {};
 
     // private
@@ -165,6 +164,28 @@ angular.module('techftw')
           'moneyAdjusted': 1000
         }
       ]
+    };
+    
+    function pushDisasters() {
+      $http({
+        'url': 'https://techftw-237d9.firebaseio.com/disasters.json',
+        'method': "PUT",
+        'data': $rootScope.disasters
+      }).then(function(success) {
+        return success.data;
+      });
+    }
+    
+    function pullDisasters(func = null) {
+      $http({
+        'url': 'https://techftw-237d9.firebaseio.com/disasters.json',
+        'method': "GET"
+      }).then(function(success) {
+        $rootScope.disasters = success.data;
+        if (func !== null) {
+          func();
+        }
+      });
     };
 
     service.generateRecipientMockData = function() {
