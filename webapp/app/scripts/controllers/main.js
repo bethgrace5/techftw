@@ -12,21 +12,23 @@ angular.module('techftw')
     $rootScope.submittedRecipients = [];
     $scope.tab = 'home';
     $scope.data = {};
+
     $scope.systemUser = {};
     $scope.systemUser.email = 'testuser@test.com';
     $scope.systemUser.password ='password';
+
+
+    globalFactory.generateRecipientMockData();
+    globalFactory.generateDisasterMockData();
+
+
     $scope.activeTab = function(tabName) {
       if (tabName === $scope.tab) {
         return 'active';
       }
       return '';
     }
-    
-    $scope.animal = 'cat';
 
-    $scope.changeAnimal = function() {
-      $scope.animal = 'dog';
-    }
 
     $scope.request = function() {
       $http({
@@ -39,6 +41,7 @@ angular.module('techftw')
         console.log(failure);
       });
     }
+
     //Build disaster details map with real data
     $scope.disasters = [
       {'id':1,
@@ -175,6 +178,7 @@ angular.module('techftw')
        'phone': '(555) 555-5555'
       },
     ];
+
     $rootScope.queryzip = function(recipients,supplyType,zipIn = null) {
       var res = {};
       var zip;
@@ -207,6 +211,7 @@ angular.module('techftw')
         return res[zip];
       }
     }
+
     //-------------------------mock data
     function getRandomAddress() {
       return Math.floor(Math.random() * (29999 - 10000) + 10000);
@@ -285,4 +290,5 @@ angular.module('techftw')
       };
     };
     //-------------------------mock data
+
   });

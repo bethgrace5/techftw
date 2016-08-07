@@ -8,7 +8,7 @@
  * Controller of the techftw
  */
 angular.module('techftw')
-  .controller('ResourcesCtrl', function ($scope, $rootScope, $routeParams) {
+  .controller('ResourcesCtrl', function ($scope, $rootScope, globalFactory) {
     $scope.selectedType = 'water';
     $scope.disasters = [
       //Data retrieved from govenment services, parsed and stored on our local
@@ -85,13 +85,9 @@ angular.module('techftw')
       },
     ];
     
-    $scope.getResourceRecipientTotal = function(zip) {
-      return $rootScope.queryzip($rootScope.submittedRecipients, $scope.selectedType, zip)
-    };
 
-    $scope.getReadjustedResourceNeed = function(resource, resourceAdjusted, zip) {
-      return resource + resourceAdjusted - getResourceRecipientTotal(resource, zip);
-    };
+
+
 
     $scope.selectedDisaster = {};
     $scope.openIndex = -1;
