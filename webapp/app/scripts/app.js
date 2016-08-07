@@ -39,6 +39,11 @@ angular
         controller: 'RecipientsCtrl',
         controllerAs: 'recipients'
       })
+      .when('/data', {
+        templateUrl: 'views/data.html',
+        controller: 'DataCtrl',
+        controllerAs: 'data'
+      })
       .otherwise({
         redirectTo: '/'
       });
