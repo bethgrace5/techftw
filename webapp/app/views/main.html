@@ -1,16 +1,7 @@
 
 <div class="panel panel-default">
   <div class="panel-body">
-    Home
-    
-  </div>
-
-  
-
-  <div ng-repeat = "f in data.features">
-    {{f.attributes}}
-  </div>
- <form name="Login" novalidate class="form-inline" role="form">
+    <form name="Login" novalidate class="form" role="form">
   <div class="form-group">
     <label for="email">Email address:</label>
     <input required type="email" ng-model="user" class="form-control" id="email">
@@ -24,4 +15,12 @@
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
+  </div>
+
+  
+
+  <div ng-repeat = "f in data.features">
+    {{f.attributes}}
+  </div>
+ 
 </div>
