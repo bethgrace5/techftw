@@ -70,7 +70,7 @@ angular.module('techftw')
       user.medicine = false;
       user.money = false;
 
-      for (var i = 0; i < 30000; i++) {
+      for (var i = 0; i < 100; i++) {
         user = {};
         user.address= getRandomAddress() + ' ' + getRandomStreetName();
         var city = getRandomCityZip()[0];
