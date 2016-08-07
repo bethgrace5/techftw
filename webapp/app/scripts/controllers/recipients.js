@@ -131,6 +131,7 @@ angular.module('techftw')
     //-------------------------mock data
     
 
+    //submit new recipient entry
     $scope.submit= function(user) {
       if (!(user.food ||
           user.water ||
