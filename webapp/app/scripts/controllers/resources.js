@@ -10,6 +10,8 @@
 angular.module('techftw')
   .controller('ResourcesCtrl', function ($scope, $rootScope, $routeParams) {
     $scope.disasters = [
+      //Data retrieved from govenment services, parsed and stored on our local
+      //databases.
       { 'name': 'Wild Fire 1',
         'description': 'Trees and stuff burning.',
         'zip': 93309,
@@ -81,6 +83,18 @@ angular.module('techftw')
         'moneyAdjusted': 1000
       },
     ];
+
+    function getResourceRecipientTotal(resource, zip) {
+      //placeholder
+      return 0;
+    };
+
+    function getReadjustedResourceNeed(resource, resourceAdjusted, zip) {
+      return
+        resource
+        + resourceAdjusted
+        - getResourceRecipientTotal(resource, zip);
+    };
 
     $scope.selectedDisaster = {};
     $scope.openIndex = -1;
