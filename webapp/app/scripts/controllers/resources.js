@@ -85,12 +85,11 @@ angular.module('techftw')
       },
     ];
 
-    function getResourceRecipientTotal(resource, zip) {
-      return
-        $rootScope.zipquery($rootScope.submittedRecipients, resource, zip)
+    $scope.getResourceRecipientTotal = function(zip) {
+      return $rootScope.queryzip($rootScope.submittedRecipients, $scope.selectedType, zip)
     };
 
-    function getReadjustedResourceNeed(resource, resourceAdjusted, zip) {
+    $scope.getReadjustedResourceNeed = function(resource, resourceAdjusted, zip) {
       return resource + resourceAdjusted - getResourceRecipientTotal(resource, zip);
     };
 
@@ -115,8 +114,6 @@ angular.module('techftw')
 
     $scope.getClass = function(type) {
       var style = 'btn btn-default form-control';
-      console.log(type);
-      console.log($scope.selectedType);
 
         if(type == $scope.selectedType) {
           style = 'btn btn-primary form-control';
