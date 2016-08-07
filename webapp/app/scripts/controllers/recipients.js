@@ -9,6 +9,7 @@
  */
 angular.module('techftw')
 .controller('RecipientsCtrl', function ($scope, $rootScope, $http) {
+    $rootScope.tab = 'recipients';
 
     function pushToFire() {
       $http({

@@ -11,6 +11,7 @@ angular.module('techftw')
   .controller('ResourcesCtrl', function ($scope, $rootScope, globalFactory) {
     globalFactory.pullDisasters();
     $scope.selectedType = 'water';
+    $rootScope.tab = 'resources';
 
     $scope.getBaseNeed = function() {
       var type = $scope.selectedType;

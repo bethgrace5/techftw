@@ -10,7 +10,7 @@
 angular.module('techftw')
   .controller('MainCtrl', function ($scope, $rootScope, $http, globalFactory) {
     $rootScope.submittedRecipients = [];
-    $scope.tab = 'home';
+    $rootScope.tab = 'home';
     $scope.data = {};
 
     $scope.systemUser = {};

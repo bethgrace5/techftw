@@ -9,6 +9,7 @@
  */
 angular.module('techftw')
   .controller('DataCtrl', function ($scope, $rootScope, $http) {
+    $rootScope.tab = 'data';
 
     $scope.supply='water';
 
