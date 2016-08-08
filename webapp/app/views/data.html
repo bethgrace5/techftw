@@ -15,34 +15,36 @@
   </div>
   <div class="panel-body">
 
-    <div class="row text-center" style="margin-top: 30px;">
-      <div class="col-sm-2 col-xs-4 col-sm-offset-1">
-        <p class="lead">
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-xs-4 col-sm-2">
+        <strong>
         Zipcode
-        </p>
+        </strong>
       </div>
-      <div class="col-xs-4 col-sm-3">
-        <p class="lead">
+      <div class="col-xs-4 col-sm-5">
+        <strong>
         Confirmed Household Recipients
-        </p>
+        </strong>
       </div>
-      <div class="col-xs-4 col-sm-3">
-        <p class="lead">
+      <div class="col-xs-4 col-sm-4">
+        <strong>
         Supplied Househould Units
-        </p>
+        </strong>
       </div>
     </div>
 
-    <div class="row text-center" ng-repeat="d in obj">
-      <div class="col-sm-2 col-xs-4 col-sm-offset-1">
+    <hr/>
+
+    <div class="row" ng-repeat="d in obj">
+      <div class="col-xs-4 col-sm-2">
         <p>{{d.zip}}</p>
       </div>
-      <div class="col-sm-2 col-xs-4">
+      <div class="col-xs-4 col-sm-5">
         <p>
         {{d[supply].households}}
         </p>
       </div>
-      <div class="col-sm-4 col-xs-4">
+      <div class="col-xs-4 col-sm-5">
         <p>
         {{d[supply].qty}}
         </p>
