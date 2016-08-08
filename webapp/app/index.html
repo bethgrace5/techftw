@@ -81,6 +81,16 @@
                   Data
                 </a>
               </li>
+              <li ng-class="activeTab('supplies')" ng-click="tab='supplies'">
+                <a class="visible-xs visible-sm" data-toggle="collapse" data-target=".navbar-collapse" ng-href="#/supplies">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  Supplies
+                </a>
+                <a class="hidden-xs hidden-sm" href="#/supplies">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                  Supplies
+                </a>
+              </li>
 
             </ul>
           </div>
@@ -131,6 +141,7 @@
         <script src="scripts/controllers/resources.js"></script>
         <script src="scripts/controllers/recipients.js"></script>
         <script src="scripts/controllers/data.js"></script>
+        <script src="scripts/controllers/supplies.js"></script>
         <script src="scripts/factories/globalFactory.js"></script>
         <!-- endbuild -->
 </body>

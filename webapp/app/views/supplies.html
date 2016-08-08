@@ -1,0 +1,84 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading dark">
+    Supplies
+  </div>
+  <div class="panel-body">
+
+    <div class="row">
+      <div class="col-xs-12">
+      <form name="supplyForm" novalidate class="row recipient-form">
+
+        <div class="form-group col-sm-3 col-xs-12">
+          <label for="address">Organiation</label>
+          <input type="text" ng-model="newSupply.org" class="form-control" required>
+        </div>
+        <div class="form-group col-sm-3 col-xs-12">
+          <label for="address">Resource</label>
+          <input type="text" ng-model="newSupply.type" class="form-control" required>
+        </div>
+        <div class="form-group col-sm-3 col-xs-12">
+          <label for="address">Amount</label>
+          <input type="text" ng-model="newSupply.qty" class="form-control" required>
+        </div>
+        <div class="form-group col-sm-2 col-xs-12">
+          <label for="address">Zipcode</label>
+          <input type="text" ng-model="newSupply.zip" class="form-control" required>
+        </div>
+        <div class="form-group col-sm-1 col-xs-12">
+          <label for="address"></label>
+          <button class="btn btn-primary" ng-click="addSupplies(supplyForm)">
+            <span class="glyphicon glyphicon-plus" style="color:white;"> </span>
+          </button>
+        </div>
+      </form>
+      </div>
+    </div>
+
+    <div class="row text-center" style="margin-top: 30px;">
+      <div class="col-xs-3">
+        <p class="lead">
+        Supplier
+        </p>
+      </div>
+      <div class="col-xs-3">
+        <p class="lead">
+        Resource
+        </p>
+      </div>
+      <div class="col-xs-3">
+        <p class="lead">
+        Amount
+        </p>
+      </div>
+      <div class="col-xs-3">
+        <p class="lead">
+        Zipcode
+        </p>
+      </div>
+    </div>
+
+    <div class="row text-center" ng-repeat="s in supplyList">
+      <div class="col-xs-3">
+        <p>{{s.org}}</p>
+      </div>
+      <div class="col-xs-3">
+        <p>
+        {{s.type}}
+        </p>
+      </div>
+      <div class="col-xs-3">
+        <p>
+        {{s.qty}}
+        </p>
+      </div>
+      <div class="col-xs-3">
+        <p>
+        {{s.qty}}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+

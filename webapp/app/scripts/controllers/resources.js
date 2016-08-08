@@ -84,6 +84,9 @@ angular.module('techftw')
     }
 
     $scope.selectType = function(t) {
+      $timeout(function() {
+        $scope.newAdjustedneed = $scope.getAdjustedNeed();
+      },100);
       $scope.selectedType = t;
     }
   });
